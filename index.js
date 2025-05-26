@@ -24,7 +24,7 @@ function saveEntry(title, content) {
   localStorage.setItem('journalEntries', JSON.stringify(entries));
   loadEntries();
 }
-
+ 
 function deleteEntry(index) {
   const entries = JSON.parse(localStorage.getItem('journalEntries')) || [];
   entries.splice(index, 1);
@@ -41,6 +41,7 @@ form.addEventListener('submit', (e) => {
     titleInput.value = '';
     contentInput.value = '';
   }
+  loadEntries()
 });
 
 window.onload = loadEntries;
